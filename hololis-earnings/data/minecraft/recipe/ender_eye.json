@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "EAF",
+    "BXC",
+    "FDE"
+  ],
+  "key": {
+    "X": "minecraft:ender_pearl",
+    "A": "minecraft:echo_shard",
+    "B": "minecraft:blaze_rod",
+    "C": "minecraft:prismarine_shard",
+    "D": "minecraft:nether_star",
+    "E": "minecraft:creaking_heart",
+    "F": "minecraft:sea_lantern"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:ender_eye"
+  }
+}

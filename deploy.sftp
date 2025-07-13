@@ -1,0 +1,3 @@
+cd world/datapacks/
+rm hololis-earnings
+put -R hololis-earnings/ .
