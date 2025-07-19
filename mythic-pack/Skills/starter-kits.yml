@@ -1,11 +1,31 @@
 starter_kit_pack:
+  Cooldown: 10
   Conditions:
   - holding{types=starter_kit_pack} true
   Skills:
-  - give{items=WOODEN_PICKAXE}
-  - give{items=WOODEN_AXE}
-  - give{items=WOODEN_SWORD}
-  - give{items=OAK_LOG 16}
-  - give{items=BAKED_POTATO 16}
-  - give{items=TORCH 16}
+  - projectile{onTick=stp_onTick;onEnd=stp_onEnd;bulletType=ITEM;material=starter_kit_head;v=10;i=1;hR=1;vR=1;StopAtBlock=true;HitNonPlayers=true;g=0.3;bulletViewDistance=100;MaxDuration=100;mr=100;bulletCulling=false;bulletCullingHeight=100;bulletCullingWidth=100} @targetlocation
+  - effect:sound{s=entity.arrow.shoot;v=2;p=0.5} @self
+stp_onTick:
+  Skills:
+  - effect:particles{p=Instant_Effect;a=5;r=0.5;y=0.5;vS=1;hS=1} @origin
+stp_onEnd:
+  Skills:
+  - effect:particles{p=Firework;a=90;speed=0;a=10;vS=3;hS=2;y=3} @self
+  - effect:particles{p=dust_color_transition;color=#FFFF00;color2=#FF9F00;size=1.5;speed=0.01;a=40;vS=1.2;hS=0.75;y=0.6} @self
+  - effect:sound{s=entity.firework_rocket.blast;v=2;p=1} @self
+  - delay 3
+  - effect:sound{s=entity.firework_rocket.twinkle;v=2;p=1} @self
+  - itemspray{i=WOODEN_PICKAXE;a=1;d=80;r=1.5;v=0.2;yo=2;yf=0.5;ap=false} @origin
+  - itemspray{i=WOODEN_AXE;a=1;d=80;r=1.5;v=0.2;yo=2;yf=0.5;ap=false} @origin
+  - itemspray{i=WOODEN_SWORD;a=1;d=80;r=1.5;v=0.2;yo=2;yf=0.5;ap=false} @origin
+  - itemspray{i=OAK_LOG;a=1;d=80;r=1.5;v=0.2;yo=2;yf=0.5;ap=false} @origin
+  - itemspray{i=BAKED_POTATO;a=1;d=80;r=1.5;v=0.2;yo=2;yf=0.5;ap=false} @origin
+  - itemspray{i=TORCH;a=1;d=80;r=1.5;v=0.2;yo=2;yf=0.5;ap=false} @origin
+  - delay 90
+  - give{items=WOODEN_PICKAXE} @self
+  - give{items=WOODEN_AXE} @self
+  - give{items=WOODEN_SWORD} @self
+  - give{items=OAK_LOG 16} @self
+  - give{items=BAKED_POTATO 16} @self
+  - give{items=TORCH 16} @self
   - removeHeldItem{amount=1}

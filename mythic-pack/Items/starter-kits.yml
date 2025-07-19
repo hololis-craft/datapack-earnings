@@ -11,3 +11,9 @@ starter_kit_pack:
     Glint: true
   Skills:
   - skill{skill=starter_kit_pack} ~onUse
+
+starter_kit_head:
+  Id: player_head
+  Display: "starter_kit_head"
+  Options:
+    Player: tokinosorach

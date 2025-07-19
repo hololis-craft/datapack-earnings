@@ -5,6 +5,8 @@ beer:
     Color: 252,218,67
   Skills:
   - randomskill{skills=beer_1,beer_2} ~onConsume
+  Hide:
+  - ADDITIONAL_TOOLTIP
 
 yukiyotuki:
   Id: potion
@@ -13,6 +15,8 @@ yukiyotuki:
     Color: 117,209,255
   Skills:
   - randomskill{skills=beer_2} ~onConsume
+  Hide:
+  - ADDITIONAL_TOOLTIP
 
 pecola:
   Id: potion
@@ -21,3 +25,5 @@ pecola:
     Color: 109,33,0
   Skills:
   - randomskill{skills=none 3,pecola 1} ~onConsume
+  Hide:
+  - ADDITIONAL_TOOLTIP
