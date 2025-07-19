@@ -27,3 +27,26 @@ pecola:
   - randomskill{skills=none 3,pecola 1} ~onConsume
   Hide:
   - ADDITIONAL_TOOLTIP
+
+mango:
+  Id: player_head
+  Display: "<color:#ffb300><b>マンゴー"
+  Lore:
+  - "<gray>マンゴーを食べると、"
+  - "<gray>元気が出るよ！"
+  Options:
+    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTQ4OTVhYTY3MjQ3YzNlYjQwNmZiOTA1ZDNmNmQzNWFjZDY2MGM2ZjE0YTg1YmNmN2JmYjg5OGI4MjY0NmU3MCJ9fX0=
+    Placeable: false
+  Skills:
+  - skill{skill=mango} ~onUse
+  Hide:
+  - ADDITIONAL_TOOLTIP
+
+gorogoronomi:
+  Id: player_head
+  Display: "<color:#f6ff00>禁断の果実"
+  Options:
+    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU0YzlkMzU4YjA5MjNjMzUzOWZmMGQwMzE2NDBiM2Q3NmZiY2I5MjhjOTY5NDc5MzM1NDg3ODIwYTI5ODM5ZSJ9fX0=
+    Placeable: false
+  Skills:
+  - potion{type=RESISTANCE;duration=1000000;level=10} ~onUse
