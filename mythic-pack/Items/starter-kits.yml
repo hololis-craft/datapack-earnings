@@ -1,0 +1,13 @@
+starter_kit_pack:
+  Id: player_head
+  Display: "<gold><b>金策スターターキット"
+  Lore:
+  - "<b>右クリック（使用）</b>で必要なアイテムが現れます"
+  Options:
+    PreventStacking: true
+    FireResistant: true
+    Player: tokinosorach
+    KeepOnDeath: true
+    Glint: true
+  Skills:
+  - skill{skill=starter_kit_pack} ~onUse

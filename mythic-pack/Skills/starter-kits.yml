@@ -1,0 +1,11 @@
+starter_kit_pack:
+  Conditions:
+  - holding{types=starter_kit_pack} true
+  Skills:
+  - give{items=WOODEN_PICKAXE}
+  - give{items=WOODEN_AXE}
+  - give{items=WOODEN_SWORD}
+  - give{items=OAK_LOG 16}
+  - give{items=BAKED_POTATO 16}
+  - give{items=TORCH 16}
+  - removeHeldItem{amount=1}

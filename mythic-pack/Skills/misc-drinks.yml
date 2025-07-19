@@ -1,0 +1,15 @@
+beer_1:
+  Skills:
+  - potion{type=POISON;duration=200} @self
+
+beer_2:
+  Skills:
+  - potion{type=REGENERATION;duration=200} @self
+
+beer_3:
+  Skills:
+  - potion{type=NAUSIA;duration=200} @self
+
+pecola:
+  Skills:
+  - potion{type=REGENERATION;duration=100} @self

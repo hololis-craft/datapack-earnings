@@ -1,3 +1,7 @@
 cd world/datapacks/
 rm hololis-earnings
 put -R hololis-earnings/ .
+cd ../..
+cd plugins/MythicMobs/packs
+rm earnings-box
+put -R mythic-pack/ earnings-box/

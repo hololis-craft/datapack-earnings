@@ -1,0 +1,11 @@
+{
+    "MythicScribe.alwaysEnabled": true,
+    "MythicScribe.fileRegex": {
+        "MythicMobs": "[\\\\\\/][Mm]ythic[Mm]obs[\\\\\\/]",
+        "Mob": "[\\\\\\/][Mm]obs[\\\\\\/]",
+        "Item": "[\\\\\\/][Ii]tems[\\\\\\/]",
+        "Metaskill": "[\\\\\\/][Ss]kills[\\\\\\/]",
+        "Droptable": "[\\\\\\/][Dd]rop[Tt]ables[\\\\\\/]",
+        "Stat": "[\\\\\\/]stats.((yaml)|(yml)|(txt))"
+    }
+}

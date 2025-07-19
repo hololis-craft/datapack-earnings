@@ -1,0 +1,23 @@
+beer:
+  Id: potion
+  Display: "<yellow><b>しゅわしゅわ"
+  Options:
+    Color: 252,218,67
+  Skills:
+  - randomskill{skills=beer_1,beer_2} ~onConsume
+
+yukiyotuki:
+  Id: potion
+  Display: "<aqua><b>雪夜月"
+  Options:
+    Color: 117,209,255
+  Skills:
+  - randomskill{skills=beer_2} ~onConsume
+
+pecola:
+  Id: potion
+  Display: "<color:#9e1500><b>Pecola"
+  Options:
+    Color: 109,33,0
+  Skills:
+  - randomskill{skills=none 3,pecola 1} ~onConsume
