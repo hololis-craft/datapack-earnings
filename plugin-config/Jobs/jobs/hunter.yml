@@ -1,0 +1,146 @@
+Hunter:
+  fullname: 討伐者
+  shortname: H
+  FullDescription:
+    - "モンスターや敵を倒してお金を稼ぐ。"
+  ChatColour: "#e85217"
+  chat-display: full
+  max-level: 200
+  leveling-progression-equation: 10*(joblevel)+(joblevel*joblevel*4)
+  income-progression-equation: baseincome
+  points-progression-equation: basepoints
+  experience-progression-equation: baseexperience-(baseexperience*((numjobs-1) *0.01))
+  rejoinCooldown: 10
+  maxDailyQuests: 1
+  # Quests:
+  #   "1":
+  #     Name: Predator
+  #     Objectives:
+  #       - Kill;Wolf;10
+  #       - Kill;Creeper;3
+  #       - Kill;Skeleton;10
+  #     RewardCommands:
+  #       - eco give [playerName] 100
+  #       - msg [playerName] Completed quest!
+  #     RewardDesc:
+  #       - Kill everything what moves and get money
+  #       - Get 100 for this!
+  cmd-on-join:
+    - lp user [name] parent add jobs-hunter
+  cmd-on-leave:
+    - lp user [name] parent remove jobs-hunter
+  Gui:
+    ItemStack: iron_sword
+  Craft:
+    # 共通 - 防具
+    leather_chestplate:
+      income: 50.0
+    leather_helmet:
+      income: 50.0
+    leather_leggings:
+      income: 50.0
+    iron_boots:
+      income: 50.0
+    iron_chestplate:
+      income: 50.0
+    iron_helmet:
+      income: 50.0
+    iron_leggings:
+      income: 50.0
+    diamond_helmet:
+      income: 50.0
+    diamond_chestplate:
+      income: 50.0
+    diamond_leggings:
+      income: 50.0
+    diamond_boots:
+      income: 50.0
+    gold_boots:
+      income: 50.0
+    gold_chestplate:
+      income: 50.0
+    gold_helmet:
+      income: 50.0
+    gold_leggings:
+      income: 50.0
+    shield:
+      income: 50.0
+    # 職業固有の道具
+    iron_sword:
+      income: 200.0
+    gold_sword:
+      income: 200.0
+    diamond_sword:
+      income: 200.0
+  Repair:
+    # 職業固有の道具
+    wood_sword:
+      income: 100.0
+    iron_sword:
+      income: 100.0
+    gold_sword:
+      income: 100.0
+    diamond_sword:
+      income: 100.0
+  Tame:
+    Wolf:
+      income: 50.0
+    Ocelot:
+      income: 50.0
+    Horse:
+      income: 50.0
+  Kill:
+    Chicken:
+      income: 5.0
+    Cow:
+      income: 6.0
+    Pig:
+      income: 5.0
+    Sheep:
+      income: 5.0
+    Wolf:
+      income: 5.0
+    Creeper:
+      income: 15.0
+    Skeleton:
+      income: 15.0
+    Spider:
+      income: 15.0
+    Zombie:
+      income: 15.0
+    BLAZE:
+      income: 50.0
+    CAVE_SPIDER:
+      income: 15.0
+    ENDERMAN:
+      income: 100.0
+    GHAST:
+      income: 25.0
+    # GIANT:
+    #   income: 250.0
+    #   points: 250
+    #   experience: 100.0
+    IRON_GOLEM:
+      income: 5.0
+    mushroom_cow:
+      income: 5.0
+    SILVERFISH:
+      income: 5.0
+    SNOWMAN:
+      income: 5.0
+    SQUID:
+      income: 5.0
+    RABBIT:
+      income: 5.0
+    GUARDIAN:
+      income: 15.0
+    SHULKER:
+      income: 15.0
+    PHANTOM:
+      income: 15.0
+    DROWNED:
+      income: 15.0
+    HUSK:
+      income: 15.0
+    WITHER:
+      income: 1000.0

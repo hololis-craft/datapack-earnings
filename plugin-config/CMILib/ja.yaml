@@ -1,0 +1,630 @@
+# フレーズは、完全なカラーコード（hex）といくつかの変数をサポートしています。
+# 一部の変数は特定の行では機能しないことに注意してください。
+# それらを現在の場所に保持しておけば、すべて問題ありません :)
+# 一部の行ではグローバル変数を設定できます。影響を受けるプレイヤーのためのものです。例: /heal Zrips の場合、Zrips のデータが変数として使用されます
+# [serverName] サーバー名を表示します
+# [playerName] ターゲットプレイヤー名を表示します
+# [playerDisplayName] ターゲットプレイヤーの表示名を表示します
+# [lvl] ターゲットプレイヤーのレベルを表示します
+# [exp] ターゲットプレイヤーの総経験値を表示します
+# [hp] ターゲットプレイヤーの体力を表示します
+# [maxHp] ターゲットプレイヤーの最大体力を表示します
+# [hunger] ターゲットプレイヤーの空腹度を表示します
+# [gameMode] ターゲットプレイヤーのゲームモードを表示します
+# [prefix] 可能であればターゲットプレイヤーのプレフィックスを表示します
+# [suffix] 可能であればターゲットプレイヤーのサフィックスを表示します
+# Sender はコマンドを実行するコンソールまたはプレイヤーです。例: Zrips が /heal Zhax を実行した場合、Zrips のデータが使用されます
+# [senderName] Sender プレイヤー名を表示します
+# [senderDisplayName] Sender プレイヤーの表示名を表示します
+# [senderLvl] Sender プレイヤーのレベルを表示します
+# [senderExp] Sender プレイヤーの総経験値を表示します
+# [senderHp] Sender プレイヤーの体力を表示します
+# [senderMaxHp] Sender プレイヤーの最大体力を表示します
+# [senderHunger] Sender プレイヤーの空腹度を表示します
+# [senderGameMode] Sender プレイヤーのゲームモードを表示します
+# [senderPrefix] 可能であれば Sender プレイヤーのプレフィックスを表示します
+# [senderSuffix] 可能であれば Sender プレイヤーのサフィックスを表示します
+# Source は追加情報に使用されるプレイヤーです。例: Zrips が /tp Zhax Zrips を実行した場合、Zhax のデータが新しいプレイヤーの場所として使用されます
+# [sourceName] Source プレイヤー名を表示します
+# [sourceDisplayName] Source プレイヤーの表示名を表示します
+# [sourceLvl] Source プレイヤーのレベルを表示します
+# [sourceExp] Source プレイヤーの総経験値を表示します
+# [sourceHp] Source プレイヤーの体力を表示します
+# [sourceMaxHp] Source プレイヤーの最大体力を表示します
+# [sourceHunger] Source プレイヤーの空腹度を表示します
+# [sourceGameMode] Source プレイヤーのゲームモードを表示します
+# [sourcePrefix] 可能であれば Source プレイヤーのプレフィックスを表示します
+# [sourceSuffix] 可能であれば Source プレイヤーのサフィックスを表示します
+# ***********************************************
+# 一部の行は、アクションバー、タイトル、サブタイトルなどのカスタムの場所に送信するオプションをサポートしています
+# 行が !toast! で始まる場合、プレイヤーはトーストメッセージ（進捗ポップアップ、1.12以降のみ）を受け取ります。タイプとアイコンを定義するためにいくつかの追加変数を使用できます。例: !toast! -t:goal -icon:paper こんにちは世界！
+# 行が !actionbar! で始まる場合、プレイヤーはこの変数の後に定義されたアクションバーメッセージを受け取ります
+# 行が !actionbar:[秒数]! で始まる場合、プレイヤーは定義された時間だけアクションバーメッセージを受け取ります
+# 行が !broadcast! で始まる場合、全員がメッセージを受け取ります。!toast! !actionbar! または !title! を追加して、全員に特定の場所へメッセージを送信できます。例: !broadcast!!title!
+# 行が !customtext:[cTextName]! で始まる場合、指定された名前のカスタムテキストが取得され、プレイヤーに表示されます。!broadcast! の後で使用された場合、オンラインの全員がこのカスタムテキストメッセージを受け取ります
+# 行が !title! で始まる場合、プレイヤーはこの変数の後に定義されたタイトルメッセージを受け取ります。さらに !subtitle! を含めることでサブタイトルメッセージを追加できます
+# 行が !bossbar:[名前]-[タイマー]! で始まる場合、プレイヤーはこの変数の後に定義されたボスバーメッセージを受け取ります。さらに、このメッセージが表示される時間を定義できます。ボスバー名を定義する必要がありますが、これは好きなもので構いません。同じ名前の行はスタックを防ぐために互いに上書きされます
+# クリック可能なメッセージを含めるには: <T>テキスト</T><H>ホバーテキスト</H><C>コマンド</C><SC>提案テキスト</SC>
+# <T> と </T> は必須で、その他は任意です
+# /n を使用して改行します
+# 複数のJSONメッセージを使用するには <Next> を使用します
+# <C> はクリックしたプレイヤーとしてコマンドを実行します
+# <CC> はコンソールから一度だけコマンドを実行します
+# <CCI> はプレイヤーがテキストをクリックするたびにコンソールからコマンドを実行します
+# <URL> はURLを含みます
+
+info:
+  # このプレフィックスを自動的に含めるには、任意のロケール行で !prefix! を使用します
+  prefix: "&e[&aCMI&e] "
+  NoPermission: "&c権限がありません！"
+  CantHavePermission: "&cこの権限を持つことはできません！"
+  WrongGroup: "&cこれには不適切なグループに所属しています！"
+  NoPlayerPermission: "&c[playerName] は次の権限を持っていません: [permission]"
+  Ingame: "&cこれはゲーム内でのみ使用できます！"
+  NoInformation: "&c情報が見つかりませんでした！"
+  Console: "&6サーバー"
+  FromConsole: "&cこれはコンソールからのみ使用できます！"
+  NotOnline: "&cそのプレイヤーはオンラインではありません！"
+  NobodyOnline: "&cオンラインのプレイヤーがいません！"
+  NoPlayer: "&cこの名前のプレイヤーが見つかりません！ (&6[name]&c)"
+  NoCommand: "&cこの名前のコマンドはありません！"
+  cantFindCommand: "&5&7[%1]&5 コマンドが見つかりませんでした。もしかして: &7[%2]&5?"
+  nolocation: "&4適切な場所が見つかりません"
+  FeatureNotEnabled: "&cこの機能は有効ではありません！"
+  ModuleNotEnabled: "&cこのモジュールは有効ではありません！"
+  versionNotSupported: "&cこの機能はサーバーのバージョンでサポートされていません"
+  spigotNotSupported: "&cこれを機能させるには、PaperSpigot系のサーバーが必要です"
+  bungeeNoGo: "&cこの機能はBungeeCordネットワークベースのサーバーでは動作しません"
+  clickToTeleport: "&eクリックしてテレポート"
+  UseMaterial: "&4マテリアル名を使用してください！"
+  IncorrectMaterial: "&4不正なマテリアル名です！"
+  UseInteger: "&4数字を使用してください！"
+  UseBoolean: "&4TrueまたはFalseを使用してください！"
+  NoLessThan: "&4数値は[amount]以上にしてください！"
+  NoMoreThan: "&4値は[amount]以下にしてください"
+  NoWorld: "&4この名前のワールドが見つかりません！"
+  IncorrectLocation: "&4場所の定義が不正です！"
+  Show: "&e表示"
+  Remove: "&c削除"
+  Back: "&e戻る"
+  Forward: "&e進む"
+  Update: "&e更新"
+  Save: "&e保存"
+  Delete: "&c削除"
+  Click: "&eクリック"
+  Preview: "&eプレビュー"
+  PasteOld: "&e古い内容を貼り付け"
+  ClickToPaste: "&eクリックしてチャットに貼り付け"
+  CantTeleportWorld: "&eこのワールドにはテレポートできません"
+  CantTeleportNoWorld: "&cターゲットのワールドが存在しません。テレポートはキャンセルされました"
+  ClickToConfirmDelete: "&eクリックして &6[name] &eの削除を確定"
+  teleported: "&eテレポートしました。"
+  PlayerSpliter: "&e----- &6[playerDisplayName] &e-----"
+  Spliter: "&e--------------------------------------------------"
+  SpliterValue: "&e------------------ &6[value] &e------------------"
+  singleSpliter: "&e-"
+  SpliterMiddle: " &6[value] "
+  ListSpliter: ", "
+  ProgressBarFill: "&2▏"
+  ProgressBarEmpty: "&e▏"
+  nothingInHand: "!actionbar!&e手にアイテムを持つ必要があります"
+  nothingInHandLeather: "&e手に革製のアイテムを持つ必要があります"
+  nothingToShow: "&e表示するものがありません"
+  noItem: "&cアイテムが見つかりません"
+  dontHaveItem: "&cインベントリに &6[amount]x [itemName] &cがありません"
+  wrongWorld: "&cこのワールドでは実行できません"
+  differentWorld: "&c異なるワールドです"
+  HaveItem: "&cインベントリに &6[amount]x [itemName] &cがあります"
+  cantDoInGamemode: "&eこのゲームモードでは実行できません"
+  cantDoForPlayer: "&6[playerDisplayName] &eにこれを実行することはできません"
+  cantDoForYourSelf: "&e自分自身にこれを実行することはできません"
+  cantDetermineMobType: "&e[type] &c変数からMobの種類を特定できません"
+  cantRename: "!actionbar!&eこの名前は使用できません"
+  confirmRedefine: "&eクリックして再定義を確定"
+  cantEdit: "&eこれを編集することはできません"
+  wrongName: "&c不正な名前です"
+  unknown: 不明
+  invalidName: "&c無効な名前です"
+  alreadyexist: "&4この名前は既に使用されています"
+  dontexist: "&4この名前では何も見つかりませんでした"
+  worldDontExist: "&cターゲットのワールドにアクセスできなくなりました。そこにテレポートできません！"
+  notSet: 未設定
+  lookAtSign: "&e看板を見てください"
+  lookAtBlock: "&eブロックを見てください"
+  lookAtEntity: "&eエンティティを見てください"
+  noSpace: "&e十分な空きスペースがありません"
+  notOnGround: "&e飛行中にこれを実行することはできません"
+  bungee:
+    Online: "&6オンライン"
+    Offline: "&cオフライン"
+    not: "&cサーバーはBungeeCordネットワークに属していません"
+    noserver: "&cこの名前のサーバーが見つかりません！"
+    server: "&eサーバー: &7[name]"
+  variables:
+    am: "&e午前"
+    pm: "&e午後"
+    Online: "&6オンライン"
+    Offline: "&cオフライン"
+    TrueColor: "&2"
+    FalseColor: "&c"
+    "True": "&6True"
+    "False": "&cFalse"
+    Enabled: "&6有効"
+    Disabled: "&c無効"
+    survival: "&6サバイバル"
+    creative: "&6クリエイティブ"
+    adventure: "&6アドベンチャー"
+    spectator: "&6スペクテイター"
+    flying: "&6飛行中"
+    notflying: "&6飛行していない"
+  Inventory:
+    Full: "&5インベントリがいっぱいです。アイテムを追加できません"
+    FullDrop: "&5すべてのアイテムがインベントリに収まりませんでした。地面にドロップされました"
+  TimeNotRecorded: "&e-記録なし-"
+  months: "&e[months] &6ヶ月 "
+  oneMonth: "&e[months] &6ヶ月 "
+  weeks: "&e[weeks] &6週間 "
+  oneWeek: "&e[weeks] &6週間 "
+  years: "&e[years] &6年 "
+  oneYear: "&e[years] &6年 "
+  day: "&e[days] &6日 "
+  oneDay: "&e[days] &6日 "
+  hour: "&e[hours] &6時間 "
+  oneHour: "&e[hours] &6時間 "
+  min: "&e[mins] &6分 "
+  sec: "&e[secs] &6秒 "
+  nextPageConsole: "&f次のページへは &5[command] &fを実行してください"
+  prevPage: "&2----<< &6前へ "
+  prevCustomPage: "&2----<< &6[value] "
+  prevPageGui: "&6前のページ "
+  prevPageClean: "&6前へ "
+  prevPageOff: "&2----<< &7前へ "
+  prevCustomPageOff: "&2----<< &7[value] "
+  prevPageHover: "&7<<<"
+  firstPageHover: "&7|<"
+  nextPage: "&6 次へ &2>>----"
+  nextCustomPage: "&6 [value] &2>>----"
+  nextPageGui: "&6次のページ"
+  nextPageClean: "&6 次へ"
+  nextPageOff: "&7 次へ &2>>----"
+  nextCustomPageOff: "&7 [value] &2>>----"
+  nextPageHover: "&7>>>"
+  lastPageHover: "&7>|"
+  pageCount: "&2[current]&7/&2[total]"
+  pageCountHover: "&e[totalEntries] 件"
+  skullOwner: "!actionbar!&7所有者:&r [playerName]"
+  mobHeadName: "&f[mobName]の&e頭"
+  circle: "&3円"
+  square: "&5四角"
+  clear: "&7クリア"
+  protectedArea: "&c保護エリアです。ここでは実行できません。"
+  valueToLong: "&e値が高すぎます。最大: [max]"
+  valueToShort: "&e値が低すぎます。最小: [min]"
+  pickIcon: "&8アイコンを選択"
+  Spawner: "&r[type] スポナー"
+  DamageCause:
+    block_explosion: 爆発
+    campfire: たき火
+    contact: ブロックダメージ
+    cramming: 圧迫
+    custom: 不明
+    dragon_breath: ドラゴンのブレス
+    drowning: 溺死
+    dryout: 乾燥
+    entity_attack: エンティティの攻撃
+    entity_explosion: エンティティの爆発
+    entity_sweep_attack: なぎ払い
+    fall: 落下
+    falling_block: 落下ブロック
+    fire: 炎
+    fire_tick: 炎
+    fly_into_wall: 壁への激突
+    freeze: 凍結
+    hot_floor: マグマブロック
+    kill: キル
+    lava: 溶岩
+    lightning: 雷
+    magic: 魔法
+    melting: 融解
+    poison: 毒
+    projectile: 飛翔物
+    sonic_boom: ソニックブーム
+    starvation: 飢餓
+    suffocation: 窒息
+    suicide: 自殺
+    thorns: 棘
+    void: 奈落
+    wither: ウィザー
+    world_border: ワールドボーダー
+  EntityType:
+    acacia_boat: アカシアのボート
+    acacia_chest_boat: アカシアのチェスト付きボート
+    allay: アレイ
+    area_effect_cloud: エリア効果雲
+    armadillo: アルマジロ
+    armor_stand: 防具立て
+    arrow: 矢
+    axolotl: ウーパールーパー
+    bamboo_chest_raft: 竹のチェスト付きイカダ
+    bamboo_raft: 竹のイカダ
+    bat: コウモリ
+    bee: ミツバチ
+    birch_boat: シラカバのボート
+    birch_chest_boat: シラカバのチェスト付きボート
+    blaze: ブレイズ
+    block_display: ブロックディスプレイ
+    bogged: ボグド
+    breeze: ブリーズ
+    breeze_wind_charge: ブリーズウィンドチャージ
+    camel: ラクダ
+    cat: ネコ
+    cave_spider: 洞窟グモ
+    cherry_boat: サクラのボート
+    cherry_chest_boat: サクラのチェスト付きボート
+    chest_minecart: チェスト付きトロッコ
+    chicken: ニワトリ
+    cod: タラ
+    command_block_minecart: コマンドブロック付きトロッコ
+    cow: ウシ
+    creaking: きしみ
+    creeper: クリーパー
+    dark_oak_boat: ダークオークのボート
+    dark_oak_chest_boat: ダークオークのチェスト付きボート
+    dolphin: イルカ
+    donkey: ロバ
+    dragon_fireball: ドラゴンファイアボール
+    drowned: ドラウンド
+    egg: 卵
+    elder_guardian: エルダーガーディアン
+    enderman: エンダーマン
+    endermite: エンダーマイト
+    ender_dragon: エンダードラゴン
+    ender_pearl: エンダーパール
+    end_crystal: エンドクリスタル
+    evoker: エヴォーカー
+    evoker_fangs: エヴォーカーの牙
+    experience_bottle: 経験値の瓶
+    experience_orb: 経験値オーブ
+    eye_of_ender: エンダーアイ
+    falling_block: 落下ブロック
+    fireball: ファイアボール
+    firework_rocket: 花火ロケット
+    fishing_bobber: 釣り竿の浮き
+    fox: キツネ
+    frog: カエル
+    furnace_minecart: かまど付きトロッコ
+    ghast: ガスト
+    giant: ジャイアント
+    glow_item_frame: 輝く額縁
+    glow_squid: ヒカリイカ
+    goat: ヤギ
+    guardian: ガーディアン
+    happy_ghast: ハッピーガスト
+    hoglin: ホグリン
+    hopper_minecart: ホッパー付きトロッコ
+    horse: ウマ
+    husk: ハスク
+    illusioner: イリュージョナー
+    interaction: インタラクション
+    iron_golem: アイアンゴーレム
+    item: アイテム
+    item_display: アイテムディスプレイ
+    item_frame: 額縁
+    jungle_boat: ジャングルのボート
+    jungle_chest_boat: ジャングルのチェスト付きボート
+    leash_knot: リード
+    lightning_bolt: 雷
+    lingering_potion: 残留ポーション
+    llama: ラマ
+    llama_spit: ラマの唾
+    magma_cube: マグマキューブ
+    mangrove_boat: マングローブのボート
+    mangrove_chest_boat: マングローブのチェスト付きボート
+    marker: マーカー
+    minecart: トロッコ
+    mooshroom: ムーシュルーム
+    mule: ラバ
+    oak_boat: オークのボート
+    oak_chest_boat: オークのチェスト付きボート
+    ocelot: ヤマネコ
+    ominous_item_spawner: 不吉なアイテムスポナー
+    painting: 絵画
+    pale_oak_boat: 淡いオークのボート
+    pale_oak_chest_boat: 淡いオークのチェスト付きボート
+    panda: パンダ
+    parrot: オウム
+    phantom: ファントム
+    pig: ブタ
+    piglin: ピグリン
+    piglin_brute: ピグリンブルート
+    pillager: ピリジャー
+    player: プレイヤー
+    polar_bear: シロクマ
+    pufferfish: フグ
+    rabbit: ウサギ
+    ravager: ラヴェジャー
+    salmon: サケ
+    sheep: ヒツジ
+    shulker: シュルカー
+    shulker_bullet: シュルカーの弾
+    silverfish: シルバーフィッシュ
+    skeleton: スケルトン
+    skeleton_horse: スケルトンホース
+    slime: スライム
+    small_fireball: 小さなファイアボール
+    sniffer: スニッファー
+    snowball: 雪玉
+    snow_golem: スノーゴーレム
+    spawner_minecart: スポナー付きトロッコ
+    spectral_arrow: 光の矢
+    spider: クモ
+    splash_potion: スプラッシュポーション
+    spruce_boat: トウヒのボート
+    spruce_chest_boat: トウヒのチェスト付きボート
+    squid: イカ
+    stray: ストレイ
+    strider: ストライダー
+    tadpole: オタマジャクシ
+    text_display: テキストディスプレイ
+    tnt: TNT
+    tnt_minecart: TNT付きトロッコ
+    trader_llama: 商人のラマ
+    trident: トライデント
+    tropical_fish: 熱帯魚
+    turtle: カメ
+    unknown: 不明
+    vex: ヴェックス
+    villager: 村人
+    vindicator: ヴィンディケーター
+    wandering_trader: 行商人
+    warden: ウォーデン
+    wind_charge: ウィンドチャージ
+    witch: ウィッチ
+    wither: ウィザー
+    wither_skeleton: ウィザースケルトン
+    wither_skull: ウィザースケルトンの頭蓋骨
+    wolf: オオカミ
+    zoglin: ゾグリン
+    zombie: ゾンビ
+    zombie_horse: ゾンビホース
+    zombie_villager: ゾンビの村人
+    zombified_piglin: ゾンビピグリン
+  # エンチャント名にカラーコードを追加しないでください
+  EnchantNames:
+    damage_arthropods: 虫特効
+    loot_bonus_blocks: 幸運
+    riptide: 激流
+    arrow_infinite: 無限
+    quick_charge: クイックチャージ
+    swift_sneak: スニーク速度上昇
+    wind_burst: ウィンドバースト
+    protection_explosions: 爆発耐性
+    depth_strider: 水中歩行
+    thorns: 棘の鎧
+    breach: 打破
+    binding_curse: 束縛の呪い
+    dig_speed: 効率強化
+    piercing: 貫通
+    water_worker: 水中採掘
+    protection_environmental: ダメージ軽減
+    loyalty: 忠誠
+    lure: 入れ食い
+    arrow_fire: フレイム
+    durability: 耐久力
+    vanishing_curse: 消滅の呪い
+    arrow_damage: 射撃ダメージ増加
+    arrow_knockback: パンチ
+    mending: 修繕
+    protection_fire: 火炎耐性
+    silk_touch: シルクタッチ
+    oxygen: 水中呼吸
+    knockback: ノックバック
+    loot_bonus_mobs: ドロップ増加
+    soul_speed: ソウルスピード
+    damage_undead: アンデッド特効
+    frost_walker: 氷渡り
+    fire_aspect: 火属性
+    luck: 宝釣り
+    multishot: マルチショット
+    channeling: 召雷
+    sweeping_edge: 範囲攻撃
+    density: 密度
+    protection_fall: 落下耐性
+    impaling: 水生特効
+    damage_all: ダメージ増加
+    protection_projectile: 飛び道具耐性
+  PotionEffectAliases:
+    absorption:
+      - 衝撃吸収
+    strength:
+      - 攻撃力上昇
+    wither:
+      - ウィザー
+    jumpboost:
+      - 跳躍力上昇
+    nightvision:
+      - 暗視
+    speed:
+      - 移動速度上昇
+    weakness:
+      - 弱体化
+    dolphinsgrace:
+      - イルカの恵み
+    healthboost:
+      - 体力増強
+    haste:
+      - 採掘速度上昇
+    windcharged:
+      - ウィンドチャージ
+    poison:
+      - 毒
+    saturation:
+      - 満腹
+    waterbreathing:
+      - 水中呼吸
+    invisibility:
+      - 透明化
+    blindness:
+      - 盲目
+    instantdamage:
+      - 即時ダメージ
+    fireresistance:
+      - 火炎耐性
+    badomen:
+      - 不吉な予感
+    glowing:
+      - 発光
+    unluck:
+      - 不運
+    levitation:
+      - 浮遊
+    infested:
+      - 虫食い
+    slowfalling:
+      - 低速落下
+    regeneration:
+      - 再生能力
+    resistance:
+      - 耐性
+    darkness:
+      - 暗闇
+    heroofthevillage:
+      - 村の英雄
+    raidomen:
+      - 襲撃の予感
+    miningfatigue:
+      - 採掘速度低下
+    oozing:
+      - 滲出
+    instanthealth:
+      - 即時回復
+    hunger:
+      - 空腹
+    trialomen:
+      - 試練の予感
+    nausea:
+      - 吐き気
+    weaving:
+      - 紡績
+    luck:
+      - 幸運
+    conduitpower:
+      - コンジットパワー
+    slowness:
+      - 移動速度低下
+direction:
+  n: 北
+  ne: 北東
+  e: 東
+  se: 南東
+  s: 南
+  sw: 南西
+  w: 西
+  nw: 北西
+modify:
+  middlemouse: "&2マウスの中クリックで編集"
+  qButtonEdit: "&2Qキーで編集"
+  newItem: "&7ここに新しいアイテムを配置"
+  newLine: "&2<改行>"
+  newLineHover: "&2新しい行を追加"
+  newPage: "&2<新規ページ>"
+  newPageHover: "&2新しいページを作成"
+  removePage: "&c<ページ削除>"
+  removePageHover: "&cページを削除"
+  deleteSymbol: " &c[X]"
+  deleteSymbolHover: "&e[text]&cを削除"
+  extraEditSymbol: " &6!"
+  addSymbol: "&2[+]"
+  addSymbolHover: "&2新規追加"
+  cancelSymbol: " &7&l[X]"
+  cancelSymbolHover: "&aキャンセル"
+  acceptSymbol: " &2&l[✔]"
+  acceptSymbolHover: "&a承認"
+  denySymbol: " &4&l[X]"
+  denySymbolHover: "&c拒否"
+  enabledSymbol: "&2[+]"
+  disabledSymbol: "&c[-]"
+  enabled: "&2有効"
+  disabled: "&c無効"
+  running: "&2実行中"
+  paused: "&c一時停止中"
+  editSymbol: "&e✎"
+  editSymbolHover: "&6[text]&eを編集"
+  editLineColor: "&f"
+  listUpSymbol: "&6⇑"
+  listUpSymbolHover: "&e上へ"
+  listDownSymbol: "&6⇓"
+  listDownSymbolHover: "&e下へ"
+  listNumbering: "&e[number]. "
+  listAlign: "&80"
+  ChangeHover: "&eクリックして変更"
+  ChangeCommands: "&eコマンド"
+  enabledColor: "&6"
+  disabledColor: "&7"
+  commandTitle: " &e--- &6[name] &e---"
+  commandList: " &e[command]  "
+  emptyLine: "&7[空行]"
+  commandEdit: "&eリストを編集"
+  nameAddInfo: "&e新しい名前を入力してください。キャンセルするには &6cancel &eと入力"
+  lineAddInfo: "&e新しい行を入力してください。キャンセルするには &6cancel &eと入力"
+  commandAddInfo: "&e新しいコマンドを入力してください。キャンセルするには &6cancel &eと入力"
+  commandAddInformationHover: "&e[playerName] はプレイヤー名を取得するために使用できます \n&eコマンドに遅延を含めるには: \n&edelay! 5 \n&e特殊コマンドがサポートされています。\n&e詳細は https://www.zrips.net/cmi/commands/specialized/ を参照してください"
+  commandEditInfo: "&eクリックして古いテキストを貼り付けます。アクションをキャンセルするには &6cancel &eと入力"
+  listLimit: "&eリストは &6[amount] &eエントリより大きくすることはできません"
+  commandEditInfoHover: "&eクリックして古いテキストを貼り付け"
+teleportation:
+  relocation: "!actionbar!&4テレポート先が障害物に塞がれていました。安全な場所にテレポートしました。"
+econ:
+  noMoney: "&cお金がありません"
+  charged: "!actionbar!&f請求額: &6[amount]"
+  notEnoughMoney: "&cお金が足りません。必要額 (&6[amount]&c)"
+  tooMuchMoney: "&c所持金が多すぎます"
+Selection:
+  SelectPoints: "&c選択ツール（&6[tool]&c）で2つの地点を選択してください！"
+  PrimaryPoint: "&e&6始点&eを選択しました [point]"
+  SecondaryPoint: "&e&6終点&eを選択しました [point]"
+  CoordsTop: "&eX:&6[x] &eY:&6[y] &eZ:&6[z]"
+  CoordsBottom: "&eX:&6[x] &eY:&6[y] &eZ:&6[z]"
+  Area: "&7[world] &f(&6[x1]:[y1]:[z1] &e[x2]:[y2]:[z2]&f)"
+Location:
+  Title: "&8プレイヤーの場所"
+  Killer: "&eキラー: &6[killer]"
+  OneLiner: "&e場所: &6[location]"
+  DeathReason: "&e死因: &6[reason]"
+  Full: "&7[world] &f[x]&7:&f[y]&7:&f[z]"
+  World: "&eワールド: &6[world]"
+  X: "&eX: &6[x]"
+  Y: "&eY: &6[y]"
+  Z: "&eZ: &6[z]"
+  Pitch: "&ePitch: &6[pitch]"
+  Yaw: "&eYaw: &6[yaw]"
+  WorldNames:
+    - world-&2通常ワールド
+    - world_nether-&2ネザー
+    - world_the_end-&2ジ・エンド
+Locations: "&7場所: "
+command:
+  help:
+    output:
+      usage: "&e使用法: &7%usage%"
+      cmdInfoFormat: "[command] &f- &e[description]"
+      cmdFormat: "&6/[command]&f[arguments]"
+      helpPageDescription: "&e* [description]"
+      explanation: "&e * [explanation]"
+      title: "&e------ ======= &6ヘルプ&e &e======= ------"
+  nocmd:
+    help:
+      info: "&e利用可能なすべてのコマンドを表示します"
+      args: ""
+  clearcache:
+    help:
+      info: "&eキャッシュをクリア"
+      args: ""
+  reload:
+    help:
+      info: "&eプラグインの設定ファイルとロケールファイルをリロードします"
+      args: ""
+    info:
+      feedback: "&6CMILの設定とロケールファイルがリロードされました！ [ms]ミリ秒かかりました"
+      failedConfig: "&4設定ファイルの読み込みに失敗しました！スペルを確認してください！"
+      failedLocale: "&4ロケールファイルの読み込みに失敗しました！スペルを確認してください！"

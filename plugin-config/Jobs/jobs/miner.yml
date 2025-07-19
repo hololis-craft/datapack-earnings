@@ -1,0 +1,181 @@
+Miner:
+  fullname: 採掘者
+  shortname: M
+  FullDescription:
+    - 土を掘り、危険な洞窟に足を進める。
+  ChatColour: RED
+  chat-display: full
+  max-level: 200
+  leveling-progression-equation: 10*(joblevel)+(joblevel*joblevel*4)
+  income-progression-equation: baseincome
+  points-progression-equation: basepoints
+  experience-progression-equation: baseexperience
+  rejoinCooldown: 10
+  maxDailyQuests: 1
+  # Quests:
+  #   "1":
+  #     Name: DarkOne
+  #     Objectives:
+  #       - Break;stone;50
+  #       - Break;granite;50
+  #       - Break;sandstone;50
+  #     RewardCommands:
+  #       - eco give [playerName] 100
+  #       - msg [playerName] Completed quest!
+  #     RewardDesc:
+  #       - Break blocks and get money
+  #       - Get 100 for this!
+  Gui:
+    ItemStack: iron_pickaxe
+  Craft:
+    # 共通 - 防具
+    leather_chestplate:
+      income: 50.0
+    leather_helmet:
+      income: 50.0
+    leather_leggings:
+      income: 50.0
+    iron_boots:
+      income: 50.0
+    iron_chestplate:
+      income: 50.0
+    iron_helmet:
+      income: 50.0
+    iron_leggings:
+      income: 50.0
+    diamond_helmet:
+      income: 50.0
+    diamond_chestplate:
+      income: 50.0
+    diamond_leggings:
+      income: 50.0
+    diamond_boots:
+      income: 50.0
+    gold_boots:
+      income: 50.0
+    gold_chestplate:
+      income: 50.0
+    gold_helmet:
+      income: 50.0
+    gold_leggings:
+      income: 50.0
+    shield:
+      income: 50.0
+    # 職業固有の道具
+    iron_pickaxe:
+      income: 200.0
+    gold_pickaxe:
+      income: 200.0
+    diamond_pickaxe:
+      income: 200.0
+  Repair:
+    # 職業固有の道具
+    wood_pickaxe:
+      income: 100.0
+    iron_pickaxe:
+      income: 100.0
+    gold_pickaxe:
+      income: 100.0
+    diamond_pickaxe:
+      income: 100.0
+  TNTBreak:
+    # 職業 - 石
+    andesite:
+      income: 1
+    granite:
+      income: 1
+    diorite:
+      income: 1
+    sandstone:
+      income: 1
+    chiseled_sandstone:
+      income: 1
+    cut_sandstone:
+      income: 1
+    # 職業 - 土
+    dirt:
+      income: 1
+    grass_block:
+      income: 1
+    gravel:
+      income: 1
+    coarse_dirt:
+      income: 1
+    red_sand:
+      income: 1
+    sand:
+      income: 1
+    clay:
+      income: 1
+  Break:
+    # 職業 - 石
+    andesite:
+      income: 1
+    granite:
+      income: 1
+    diorite:
+      income: 1
+    sandstone:
+      income: 1
+    chiseled_sandstone:
+      income: 1
+    cut_sandstone:
+      income: 1
+    # 職業 - 土
+    dirt:
+      income: 1
+    grass_block:
+      income: 1
+    gravel:
+      income: 1
+    coarse_dirt:
+      income: 1
+    red_sand:
+      income: 1
+    sand:
+      income: 1
+    clay:
+      income: 1
+    # 職業 - 鉱石(石炭)
+    coal_ore:
+      income: 40
+    deepslate_coal_ore:
+      income: 40
+    # 職業 - 鉱石(RS)
+    redstone_ore:
+      income: 50
+    deepslate_redstone_ore:
+      income: 50
+    # 職業 - 鉱石(銅)
+    copper_ore:
+      income: 40
+    deepslate_copper_ore:
+      income: 40
+    # 職業 - 鉱石(鉄)
+    iron_ore:
+      income: 150
+    deepslate_iron_ore:
+      income: 150
+    # 職業 - 鉱石(金)
+    gold_ore:
+      income: 100
+    deepslate_gold_ore:
+      income: 100
+    # 職業 - 鉱石(ラピス)
+    lapis_ore:
+      income: 20
+    deepslate_lapis_ore:
+      income: 20
+    # 職業 - 鉱石(ダイヤ)
+    diamond_ore:
+      income: 500
+    deepslate_diamond_ore:
+      income: 500
+    # 職業 - 鉱石(エメラルド)
+    emerald_ore:
+      income: 1000
+    deepslate_emerald_ore:
+      income: 1000
+    # 職業 - 鉱石(ネザークォーツ)
+    nether_quartz_ore:
+      income: 40

@@ -1,0 +1,123 @@
+# ----------------------------------------------
+# 何をしているか理解している場合を除き、これらを変更しないでください！
+debug: false
+version: 1.0
+# ----------------------------------------------
+
+# ここから編集できます:
+
+playerShops:
+  # プレイヤーショップへのテレポートを許可する
+  teleport:
+    enabled: true
+    # ウォームアップ時間(秒)。0に設定すると無効になります。
+    warmup: 5
+    allowMovement: false
+
+adminShops:
+  # 管理者ショップへのテレポートを許可する
+  teleport:
+    enabled: true
+    # ウォームアップ時間(秒)。0に設定すると無効になります。
+    warmup: 5
+    # カウントダウン中にプレイヤーが移動することを許可する
+    allowMovement: false
+  # 管理者ショップを遠隔で開くことを許可する
+  remote: false
+  filler:
+    # 管理者ショップGUIの隙間を埋めるためのアイテム
+    material: GRAY_STAINED_GLASS_PANE
+
+# ショップの更新頻度は？(秒単位) ラグを避けるため30秒以上にしてください。
+refresh-rate: 60
+
+economy:
+  # 経済サポートを有効にする
+  enabled: true
+  # 取引の価格上限を設定する
+  selling-price-limit: 1.0E8
+  # 通貨アイテム:
+  sell-item:
+    # 名前のフォーマット。価格には %price% を使用してください。
+    name: "価格: §f$%price%"
+    material: GOLD_NUGGET
+    glow: true
+    lore:
+      - §bクリックして編集
+  # 通貨アイテム:
+  buy-item:
+    # 名前のフォーマット。価格には %price% を使用してください。
+    name: "入手額: §f$%price%"
+    material: GOLD_NUGGET
+    glow: true
+    lore:
+      - §bクリックして編集
+
+# 色コードには '§' を使用してください
+
+messages:
+  prefix: §8[§bShopkeepers アドオン§8] §r
+  noMoney: §cこのアイテムを購入するのに十分なお金がありません！
+  noMoneyOwner: §cショップのオーナーはこのアイテムを売るための十分なお金を持っていません！
+  setPrice: "§aこのアイテムの新しい価格を入力してください:"
+  invalidPrice: §c無効な価格です！有効な数値を入力してください。
+  priceChanged: §a価格が正常に変更されました！
+  priceChangeCancelled: §c価格の変更がキャンセルされました！
+  previousPage:
+    title: §b§l前のページ
+  nextPage:
+    title: §b§l次のページ
+  back:
+    title: §b§l前のメニューに戻る
+  homePage:
+    title: §8§lShopkeepers
+    buttons:
+      adminShops:
+        title: §b管理者ショップ
+        lore:
+          - §7すべての管理者ショップを表示します。
+          - §7クリックして開く。
+      playerShops:
+        title: §bプレイヤーショップ
+        lore:
+          - §7すべてのプレイヤーショップを表示します。
+          - §7クリックして開く。
+
+  # ショップキーパーやアイテムに移動するためのボタンがある管理者・プレイヤーショップ
+  adminShopsPage:
+    title: §8§l管理者ショップ
+    lore:
+      - §7ここではすべての管理者ショップを表示・管理できます。
+      - §7ショップをクリックしてそのアイテムを表示します。
+    buttons:
+      adminShops:
+        title: §b管理者ショップの店主
+        lore:
+          - §7すべての管理者ショップの店主を表示します。
+          - §7クリックして開く。
+      adminItems:
+        title: §b管理者ショップのアイテム
+        lore:
+          - §7管理者ショップで利用可能なすべてのアイテムを表示します。
+          - §7クリックして開く。
+
+  playerShopsPage:
+    title: §8§lプレイヤーショップ
+    lore:
+      - §7ここではすべてのプレイヤーショップを表示・管理できます。
+      - §7ショップをクリックしてそのアイテムを表示します。
+    noShops: §cプレイヤーショップが見つかりません。
+    buttons:
+      playerShops:
+        title: §bプレイヤーショップの店主
+        lore:
+          - §7すべてのプレイヤーショップの店主を表示します。
+          - §7クリックして開く。
+      playerItems:
+        title: §bプレイヤーショップのアイテム
+        lore:
+          - §7プレイヤーショップで利用可能なすべてのアイテムを表示します。
+          - §7クリックして開く。
+
+  adminShops:
+    title: "§8§l管理者ショップ: %page%" # %

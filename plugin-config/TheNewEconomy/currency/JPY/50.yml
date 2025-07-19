@@ -1,0 +1,45 @@
+#Configurations relating to basic information about this currency tier.
+Info:
+  #The singular name of this tier.
+  Single: "50"
+
+  #The plural name of this tier.
+  Plural: "50"
+
+#The checks to perform on items to determine if they are valid currency items or not
+Checks:
+  - "name"
+  - "texture"
+  - "material"
+  - "custom-name"
+  - "lore"
+  - "enchantments"
+  - "flags"
+
+Integrations:
+  ItemsAdder:
+    Enabled: false
+    item: "example:item"
+  Oraxen:
+    Enabled: false
+    item: "example:item"
+  Nexo:
+    Enabled: false
+    item: "example:item"
+  Nova:
+    Enabled: false
+    item: "example:item"
+  SlimeFun:
+    Enabled: false
+    item: "example:item"
+
+#Various options for this currency tier.
+Options:
+  Weight: 50
+  Material: "GOLD_NUGGET"
+  Name: "50円"
+  Enchantments:
+    - "unbreaking"
+  #Configurations relating to crafting this currency tier.
+  Crafting:
+    Enabled: false

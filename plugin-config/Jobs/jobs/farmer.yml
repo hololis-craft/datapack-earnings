@@ -1,0 +1,311 @@
+Farmer:
+  fullname: 農家
+  shortname: Fa
+  FullDescription:
+    - "草木を耕し、動物を飼育し、時には釣りをしてお金を稼ぐ。"
+  ChatColour: BLUE
+  chat-display: full
+  max-level: 200
+  leveling-progression-equation: 10*(joblevel)+(joblevel*joblevel*4)
+  income-progression-equation: baseincome
+  points-progression-equation: basepoints
+  experience-progression-equation: baseexperience-(baseexperience*((numjobs-1) *0.01))
+  rejoinCooldown: 10
+  maxDailyQuests: 1
+  # Quests:
+  #   "1":
+  #     Name: Regular Joe
+  #     Objectives:
+  #       - Breed;Sheep;10
+  #       - Shear;White;10
+  #       - Milk;Cow;3
+  #     RewardCommands:
+  #       - eco give [playerName] 100
+  #       - msg [playerName] Completed quest!
+  #     RewardDesc:
+  #       - Be a farmer and get money
+  #       - Get 100 for this!
+  cmd-on-join:
+    - lp user [name] parent add jobs-farmer
+  cmd-on-leave:
+    - lp user [name] parent remove jobs-farmer
+  Gui:
+    ItemStack: wheat
+  Craft:
+    # 共通 - 防具
+    leather_chestplate:
+      income: 50.0
+    leather_helmet:
+      income: 50.0
+    leather_leggings:
+      income: 50.0
+    iron_boots:
+      income: 50.0
+    iron_chestplate:
+      income: 50.0
+    iron_helmet:
+      income: 50.0
+    iron_leggings:
+      income: 50.0
+    diamond_helmet:
+      income: 50.0
+    diamond_chestplate:
+      income: 50.0
+    diamond_leggings:
+      income: 50.0
+    diamond_boots:
+      income: 50.0
+    gold_boots:
+      income: 50.0
+    gold_chestplate:
+      income: 50.0
+    gold_helmet:
+      income: 50.0
+    gold_leggings:
+      income: 50.0
+    shield:
+      income: 50.0
+    # 職業固有の道具
+    iron_hoe:
+      income: 200.0
+    gold_hoe:
+      income: 200.0
+    diamond_hoe:
+      income: 200.0
+    iron_axe:
+      income: 200.0
+    gold_axe:
+      income: 200.0
+    diamond_axe:
+      income: 200.0
+  Repair:
+    # 職業固有の道具
+    wood_hoe:
+      income: 100.0
+    iron_hoe:
+      income: 100.0
+    gold_hoe:
+      income: 100.0
+    diamond_hoe:
+      income: 100.0
+    wood_axe:
+      income: 100.0
+    iron_axe:
+      income: 100.0
+    gold_axe:
+      income: 100.0
+    diamond_axe:
+      income: 100.0
+  Tame:
+    Horse:
+      income: 50.0
+    Parrot:
+      income: 50.0
+    Ocelot:
+      income: 50.0
+    Llama:
+      income: 50.0
+  Breed:
+    # 農家 - 動物を繁殖する(食用)
+    Sheep:
+      income: 25.0
+    Cow:
+      income: 25.0
+    mushroom_cow:
+      income: 25.0
+    Pig:
+      income: 25.0
+    Chicken:
+      income: 25.0
+    Rabbit:
+      income: 25.0
+    # 農家 - 動物を繁殖する(ペット等)
+    Horse:
+      income: 50.0
+    Wolf:
+      income: 50.0
+    Ocelot:
+      income: 50.0
+    Llama:
+      income: 50.0
+    Turtle:
+      income: 50.0
+  Shear:
+    Red:
+      income: 15.0
+    Orange:
+      income: 15.0
+    Yellow:
+      income: 15.0
+    Green:
+      income: 15.0
+    Blue:
+      income: 15.0
+    Light_Blue:
+      income: 15.0
+    Magenta:
+      income: 15.0
+    Pink:
+      income: 15.0
+    White:
+      income: 15.0
+    Light_Gray:
+      income: 15.0
+    Black:
+      income: 15.0
+    Brown:
+      income: 15.0
+    Purple:
+      income: 15.0
+    Cyan:
+      income: 15.0
+    Gray:
+      income: 15.0
+    Lime:
+      income: 15.0
+    mushroom_cow:
+      income: 15.0
+  Milk:
+    Cow:
+      income: 15.0
+  Break:
+    # 農家 - 作物
+    chorus_plant:
+      income: 10.0
+    chorus_flower:
+      income: 10.0
+    beetroots-3:
+      income: 10.0
+    wheat-7:
+      income: 10.0
+    carrots-7:
+      income: 10.0
+    potatoes-7:
+      income: 10.0
+    pumpkin:
+      income: 10.0
+    melon:
+      income: 10.0
+    sugar_cane:
+      income: 10.0
+    cocoa-2:
+      income: 10.0
+    # 農家 - 木を切る
+    oak_log:
+      income: 15.0
+    spruce_log:
+      income: 15.0
+    birch_log:
+      income: 15.0
+    jungle_log:
+      income: 15.0
+    acacia_log:
+      income: 15.0
+    dark_oak_log:
+      income: 15.0
+    cherry_log:
+      income: 15.0
+    mangrove_log:
+      income: 15.0
+    pale_oak_log:
+      income: 15.0
+    crimson_stem:
+      income: 15.0
+    warped_stem:
+      income: 15.0
+    # oak_sapling:
+    #   income: 10.0
+    # spruce_sapling:
+    #   income: 10.0
+    # birch_sapling:
+    #   income: 10.0
+    # jungle_sapling:
+    #   income: 2
+    # acacia_sapling:
+    #   income: 2
+    # dark_oak_sapling:
+    #   income: 2
+    # lily_pad:
+    #   income: 2
+    # dandelion:
+    #   income: 2
+    # poppy:
+    #   income: 2
+    # blue_orchid:
+    #   income: 2
+    # allium:
+    #   income: 2
+    # azure_bluet:
+    #   income: 2
+    # red_tulip:
+    #   income: 2
+    # orange_tulip:
+    #   income: 2
+    # white_tulip:
+    #   income: 2
+    # pink_tulip:
+    #   income: 2
+    # oxeye_daisy:
+    #   income: 2
+    # brown_mushroom:
+    #   income: 1
+    # red_mushroom:
+    #   income: 1
+    # vine:
+    #   income: 1
+    # cactus:
+    #   income: 1
+    # nether_wart:
+    #   income: 1
+  Place:
+    # 農家 - 作物を植える
+    wheat:
+      income: 5.0
+    potatoes:
+      income: 5.0
+    carrots:
+      income: 5.0
+    beetroots:
+      income: 5.0
+    pumpkin_stem:
+      income: 5.0
+    melon_stem:
+      income: 5.0
+    # 農家 - 木を植える
+    oak_sapling:
+      income: 5.0
+    spruce_sapling:
+      income: 5.0
+    birch_sapling:
+      income: 5.0
+    jungle_sapling:
+      income: 5.0
+    acacia_sapling:
+      income: 5.0
+    dark_oak_sapling:
+      income: 5.0
+    cherry_sapling:
+      income: 5.0
+    mangrove_propagule:
+      income: 5.0
+    pale_oak_sapling:
+      income: 5.0
+  Collect:
+    # 農家 - 一部の作物を収穫する
+    sweet_berries-3:
+      income: 10.0
+    glow_berries:
+      income: 10.0
+    honeybottle:
+      income: 30.0
+    honeycomb:
+      income: 30.0
+  Fish:
+    cod:
+      income: 15
+    salmon:
+      income: 15
+    tropical_fish:
+      income: 15
+    pufferfish:
+      income: 15
