@@ -10,8 +10,9 @@ stp_onTick:
   - effect:particles{p=Instant_Effect;a=5;r=0.5;y=0.5;vS=1;hS=1} @origin
 stp_onEnd:
   Skills:
-  - effect:particles{p=Firework;a=90;speed=0;a=10;vS=3;hS=2;y=3} @self
-  - effect:particles{p=dust_color_transition;color=#FFFF00;color2=#FF9F00;size=1.5;speed=0.01;a=40;vS=1.2;hS=0.75;y=0.6} @self
+  - removeHeldItem{amount=1}
+  - effect:particles{p=Firework;a=90;speed=0;a=10;vS=3;hS=2;y=3} @origin
+  - effect:particles{p=dust_color_transition;color=#FFFF00;color2=#FF9F00;size=1.5;speed=0.01;a=40;vS=1.2;hS=0.75;y=0.6} @origin
   - effect:sound{s=entity.firework_rocket.blast;v=2;p=1} @self
   - delay 3
   - effect:sound{s=entity.firework_rocket.twinkle;v=2;p=1} @self
@@ -21,11 +22,11 @@ stp_onEnd:
   - itemspray{i=OAK_LOG;a=1;d=80;r=1.5;v=0.2;yo=2;yf=0.5;ap=false} @origin
   - itemspray{i=BAKED_POTATO;a=1;d=80;r=1.5;v=0.2;yo=2;yf=0.5;ap=false} @origin
   - itemspray{i=TORCH;a=1;d=80;r=1.5;v=0.2;yo=2;yf=0.5;ap=false} @origin
-  - delay 90
+  - delay 80
   - give{items=WOODEN_PICKAXE} @self
   - give{items=WOODEN_AXE} @self
   - give{items=WOODEN_SWORD} @self
   - give{items=OAK_LOG 16} @self
   - give{items=BAKED_POTATO 16} @self
   - give{items=TORCH 16} @self
-  - removeHeldItem{amount=1}
+  - message{message="<green><b>スターターキットを受け取りました！"} @self
