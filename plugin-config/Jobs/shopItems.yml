@@ -87,6 +87,8 @@ Items:
         - "&eお金とアイテムの取引ができる村人を召喚します"
         - "&6登録できる取引: 8個"
       HideWithoutPermission: true
+    RequiredPermission:
+      - jobs.item.villager_market_egg
     RequiredJobLevels:
       - Merchant-10
     PerformCommands:
@@ -100,6 +102,8 @@ Items:
         - "&eお金とアイテムの取引ができる村人を召喚します"
         - "&6登録できる取引: 26個"
       HideWithoutPermission: true
+    RequiredPermission:
+      - jobs.item.villager_market_egg
     RequiredJobLevels:
       - Merchant-30
     PerformCommands:
@@ -113,6 +117,8 @@ Items:
         - "&eお金とアイテムの取引ができる村人を召喚します"
         - "&6登録できる取引: 53個"
       HideWithoutPermission: true
+    RequiredPermission:
+      - jobs.item.villager_market_egg
     RequiredJobLevels:
       - Merchant-60
     PerformCommands:

@@ -25,6 +25,10 @@ Miner:
   #     RewardDesc:
   #       - Break blocks and get money
   #       - Get 100 for this!
+  cmd-on-join:
+    - lp user [name] parent add jobs-miner
+  cmd-on-leave:
+    - lp user [name] parent remove jobs-miner
   Gui:
     ItemStack: iron_pickaxe
   Craft:
