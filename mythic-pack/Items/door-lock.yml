@@ -1,0 +1,17 @@
+door_lock:
+  Id: PISTON
+  Display: "<red><b>ドアロック"
+  Type: FURNITURE
+  Furniture:
+    Type: DISPLAY
+    Material: IRON_DOOR
+    Model: 12
+    Placement: FLOOR
+    Barriers:
+    - 0,0,0
+    - 0,1,0
+    Scale: 1,2,1
+    Orientation: ATTACHED
+    Health: 1000000000
+  FurnitureSkills:
+  - skill{s=door_lock} ~onUse

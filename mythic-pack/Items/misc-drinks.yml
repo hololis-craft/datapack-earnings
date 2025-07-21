@@ -23,8 +23,6 @@ pecola:
   Display: "<color:#9e1500><b>Pecola"
   Options:
     Color: 109,33,0
-  Skills:
-  - randomskill{skills=none 3,pecola 1} ~onConsume
   Hide:
   - ADDITIONAL_TOOLTIP
 
@@ -38,7 +36,7 @@ mango:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTQ4OTVhYTY3MjQ3YzNlYjQwNmZiOTA1ZDNmNmQzNWFjZDY2MGM2ZjE0YTg1YmNmN2JmYjg5OGI4MjY0NmU3MCJ9fX0=
     Placeable: false
   Skills:
-  - skill{skill=mango} ~onUse
+  - randomskill{skills=mango,mango_failed} ~onUse
   Hide:
   - ADDITIONAL_TOOLTIP
 

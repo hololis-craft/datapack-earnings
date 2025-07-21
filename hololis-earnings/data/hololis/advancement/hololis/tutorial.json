@@ -1,0 +1,17 @@
+{
+    "display": {
+        "title": "説明書",
+        "description": "サーバ内の説明書を読む",
+        "icon": {
+            "id": "minecraft:book"
+        },
+        "announce_to_chat": false,
+        "show_toast": true
+    },
+    "criteria": {
+        "": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "hololis:hololis/root"
+}

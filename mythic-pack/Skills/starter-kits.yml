@@ -29,4 +29,5 @@ stp_onEnd:
   - give{items=OAK_LOG 16} @self
   - give{items=BAKED_POTATO 16} @self
   - give{items=TORCH 16} @self
+  - effect:sound{s=entity.experience_orb.pickup;v=3;p=1} @self
   - message{message="<green><b>スターターキットを受け取りました！"} @self

@@ -31,5 +31,5 @@ Merchant:
     ItemStack: emerald
   VTrade:
     ALL:
-      income: 60.0
-      experience: 5.0
+      income: 30.0
+      experience: 8.0

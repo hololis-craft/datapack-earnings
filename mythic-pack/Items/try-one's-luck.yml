@@ -1,0 +1,38 @@
+lucky-box:
+  Id: player_head
+  Display: '&e☆ラッキーボックス☆'
+  Lore:
+  - "<gradient:#FFD439:#FF7D39><bold><strikethrough><underlined>==========&r"
+  - "<#FF8B00>&m&l&ka&r &f右クリック(使用)でボックスを開封しよう"
+  - "<#FF8B00>&m&l&ka&r &f&l運が良ければ何かアイテムが手に入るかも...？"
+  - "<gradient:#FF7D39:#FFD439><bold><strikethrough><underlined>==========&r"
+  Options:
+    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTBhNDQzZTBlY2E3ZjVkMzA2MjJkZDkzN2YxZTVlYTJjZGYxNWQxMGMyN2ExOTljNjhhN2NlMDljMzlmNmI2OSJ9fX0=
+  Skills:
+  - skill{s=lucky-box-open} ~onUse
+lucky-box2:
+  Id: player_head
+  Display: 'ラッキーボックス2'
+  Options:
+    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTBhNDQzZTBlY2E3ZjVkMzA2MjJkZDkzN2YxZTVlYTJjZGYxNWQxMGMyN2ExOTljNjhhN2NlMDljMzlmNmI2OSJ9fX0=
+lucky-money-bundle:
+  Id: yellow_bundle
+  Display: '&f&m&l&ka&r&6$&r&e&n&lマンさんの財布&r&6$&r&f&m&l&ka&r'
+  Lore:
+  - "<gradient:#FFD439:#FF7D39><bold><strikethrough><underlined>==========&r"
+  - "<#FF8B00>&m&l&ka&r &f右クリック(使用)でマンさんの財布の中身をｺｯｿﾘ拝見しよう"
+  - "<#FF8B00>&m&l&ka&r &f&lもしかしたらお金が入ってるかも...？"
+  - "<gradient:#FF7D39:#FFD439><bold><strikethrough><underlined>==========&r"
+  Enchantments:
+  - UNBREAKING 1
+  Hide:
+  - ENCHANTS
+  Options:
+    Unbreakable: true
+  Skills:
+  - skill{s=lucky-money-bundle-open} ~onUse
+lucky-money-bundle-head:
+  Id: player_head
+  Display: 'マニーボックス'
+  Options:
+    Player: NogaNekko

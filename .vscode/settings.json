@@ -1,5 +1,5 @@
 {
-    "MythicScribe.alwaysEnabled": true,
+    "MythicScribe.alwaysEnabled": false,
     "MythicScribe.fileRegex": {
         "MythicMobs": "[\\\\\\/][Mm]ythic[Mm]obs[\\\\\\/]",
         "Mob": "[\\\\\\/][Mm]obs[\\\\\\/]",

@@ -1,0 +1,20 @@
+{
+    "display": {
+        "title": "やれやれ…",
+        "description": "正しくエンドコンテンツを始める",
+        "icon": {
+            "id": "minecraft:ender_eye"
+        },
+        "announce_to_chat": true,
+        "show_toast": true
+    },
+    "criteria": {
+        "ender_eye": {
+            "trigger": "minecraft:recipe_crafted",
+            "conditions": {
+                "recipe_id": "minecraft:ender_eye"
+            }
+        }
+    },
+    "parent": "hololis:hololis/root"
+}

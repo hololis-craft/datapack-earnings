@@ -25,3 +25,13 @@ mango:
   - effect:particles{p=reddust;amount=12;speed=1;hs=0.7;vs=0.8;y=1;color=#ffb300} @self
   - effect:sound{s=entity.generic.eat;v=1.0;p=2} @self
   - effect:particles{particle=heart;amount=1;vSpread=0;hSpread=0;Speed=0;yoffset=1.7} @self
+
+mango_failed:
+  Cooldown: 0.1
+  Conditions:
+  - holding{types=mango} true
+  Skills:
+  - removeHeldItem{amount=1} @self
+  - potion{effect=INSTANT_DAMAGE;duration=2;level=3} @self
+  - effect:particles{p=reddust;amount=12;speed=1;hs=0.7;vs=0.8;y=1;color=#00464b} @self
+  - effect:sound{s=entity.generic.hurt;v=1.0;p=2} @self

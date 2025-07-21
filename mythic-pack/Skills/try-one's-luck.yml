@@ -1,0 +1,55 @@
+lucky-box-open:
+  Cooldown: 0.5
+  Conditions:
+  - holding{types=lucky-box} true
+  Skills:
+  - projectile{onTick=lbo-onTick;onEnd=lbo-onEnd;bulletType=ITEM;material=lucky-box2;v=10;i=1;hR=1;vR=1;StopAtBlock=true;HitNonPlayers=true;g=0.3;bulletViewDistance=100;MaxDuration=100;mr=100;bulletCulling=false;bulletCullingHeight=100;bulletCullingWidth=100} @targetlocation
+  - effect:sound{s=entity.arrow.shoot;v=2;p=0.5} @self
+
+lbo-onTick:
+  Skills:
+  - effect:particlesphere{p=End_Rod;a=1;r=0.2;y=0.2;vS=1;hS=1} @origin
+
+lbo-onEnd:
+  Skills:
+  - removeHeldItem{amount=1}
+  - effect:blockmask{m=yellow_concrete_powder;d=80;onlyAir=false;radius=1} @origin
+  - effect:particles{p=Firework;a=90;speed=0;a=10;vS=3;hS=2;y=3} @origin
+  - effect:particles{p=dust_color_transition;color=#FFFF00;color2=#FF9F00;size=1.5;speed=0.01;a=40;vS=1.2;hS=0.75;y=0.6} @origin
+  - effect:sound{s=entity.firework_rocket.blast;v=2;p=1} @self
+  - effect:sound{s=entity.experience_orb.pickup;v=2;p=1} @self
+  - itemspray{i=IRON_INGOT;a=5;d=200;r=1.5;v=0.2;yo=2;yf=0.5;ap=true} @origin 0.1
+  - itemspray{i=DIAMOND;a=3;d=200;r=1.5;v=0.2;yo=2;yf=0.5;ap=true} @origin 0.05
+  - itemspray{i=GOLD_INGOT;a=5;d=200;r=1.5;v=0.2;yo=2;yf=0.5;ap=true} @origin 0.1
+  - itemspray{i=GOLDEN_APPLE;a=4;d=200;r=1.5;v=0.2;yo=2;yf=0.5;ap=true} @origin 0.02
+
+lucky-money-bundle-open:
+  Cooldown: 0.5
+  Conditions:
+  - holding{types=lucky-money-bundle} true
+  Skills:
+  - projectile{onTick=lmbo-onTick;onEnd=lmbo-onEnd;bulletType=ITEM;material=lucky-money-bundle-head;v=10;i=1;hR=1;vR=1;StopAtBlock=true;HitNonPlayers=true;g=0.3;bulletViewDistance=100;MaxDuration=100;mr=100;bulletCulling=false;bulletCullingHeight=100;bulletCullingWidth=100} @targetlocation
+  - effect:sound{s=entity.arrow.shoot;v=2;p=0.5} @self
+
+lmbo-onTick:
+  Skills:
+  - effect:particles{p=dust_color_transition;color=#FFFF00;color2=#FF9F00;size=1.5;speed=0.01;a=4;vS=1.2;hS=0.75;y=0.6} @origin
+
+lmbo-onEnd:
+  Skills:
+  - removeHeldItem{amount=1}
+  - effect:blockmask{m=gold_block;d=80;onlyAir=false;radius=2} @origin
+  - effect:particles{p=Firework;a=90;speed=0;a=10;vS=3;hS=2;y=3} @origin
+  - effect:particles{p=dust_color_transition;color=#FFFF00;color2=#FF9F00;size=1.5;speed=0.01;a=40;vS=1.2;hS=0.75;y=0.6} @origin
+  - effect:sound{s=entity.firework_rocket.blast;v=2;p=1} @self
+  - effect:sound{s=entity.experience_orb.pickup;v=2;p=1} @self
+  - skill{s=lucky-lottery} 0.04
+
+lucky-lottery:
+  Skills:
+  - sendtitle{title="&e&l10万円ゲット！";d=120} @self
+  - effect:sound{s=ui.toast.challenge_complete;v=2;p=1} @self
+  - delay 3
+  - itemspray{i=GOLD_INGOT;a=100;d=9999;r=1.5;v=0.2;yo=2;yf=0.5;ap=true} @origin
+  - message{m="&e&m&l&k.;.&r&fマンさんが一文無しになりました。あ〜あ🙄&r&e&m&l&k.;."} @self
+  - currencygive{amount=100000} @self
