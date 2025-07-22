@@ -44,9 +44,9 @@ Optimizations:
   InformDuplicates: false
   DecimalPlaces:
     # Decimal places to be shown
-    Money: 2
-    Exp: 2
-    Points: 2
+    Money: 0
+    Exp: 0
+    Points: 0
   DBCleaning:
     Jobs:
       # Warning!!! before enabling this feature, please make data base backup, just in case there will be some issues with data base cleaning
@@ -93,11 +93,11 @@ Optimizations:
     Compact: true
     # While enabled explored chunk data will be saved into database and will persist over server restarts
     # While disabled expored chunk data resets on every server startup which will freeup memory and speedup server startups and stop in some cases
-    SaveIntoDatabase: false
+    SaveIntoDatabase: true
 Logging:
   # With this set to true all players jobs actions will be logged to database for easy to see statistics
   # This is still in development and in future it will expand
-  Use: false
+  Use: true
 broadcast:
   on-skill-up:
     # Do all players get a message when someone goes up a skill level?
@@ -220,7 +220,7 @@ Economy:
   # Useful for removing particular payment method without editing whole jobConfig file
   PaymentMethods:
     Money: true
-    Exp: false
+    Exp: true
     Points: false
   # Can be used to change payment amounts for all jobs and all actions if you want to readjust them
   # Amounts are in percentage, above 0 will increase payments
@@ -440,20 +440,20 @@ ExploitProtections:
           Use: true
           # Time in seconds. This can only be positive number and no higher than 900
           # If higher timers are needed then it can be defined in restrictedBlocks.yml file for each specific block
-          Timer: 3
+          Timer: 19
         Break:
           Use: true
           # Time in seconds. This can only be positive number and no higher than 60
           # This is only to prevent player from placing blocks into same place and getting paid once more
-          Timer: 3
+          Timer: 10
       # Enable silk touch protection.
       # With this enabled players wont get paid for broken blocks from restrictedblocks list with silk touch tool.
       SilkTouchProtection: true
     MonsterDamage:
       # This section controls how much damage player should do to monster for player to get paid
       # This prevents from killing monsters in one hit when they suffer in example fall damage
-      Use: false
-      Percentage: 60
+      Use: true
+      Percentage: 15
       # When enabled we will avoid checking damage done to ender dragon, wither and warden
       # This can help out in case you have server with custom damage sources which might not be registered and payouts might not be given out
       IgnoreBosses: true
@@ -605,7 +605,7 @@ JobsGUI:
   # Allows players to join a specified job via GUI.
   DisableJoiningJobThroughGui: false
   # Do you want to show the action names in GUI?
-  ShowActionNames: true
+  ShowActionNames: false
   # Do we hide all item attributes in GUI?
   HideItemAttributes: true
   # Defines size in rows of GUI
@@ -638,7 +638,7 @@ Commands:
   # Default - behaves like before and will open jobs help page with list of commands player can access
   # Browse - will open jobs browse GUI where player can check existing jobs and their actions
   # Last option is to define command you want to perform, use [playerName] variable to replace it with players name who performed it. Multiple commands can be provided too. Commands will be performed from console.
-  Jobs: Default
+  Jobs: Browse
   PageRow:
     JobsTop:
       # Defines amount of players to be shown in one page for /jobs top & /jobs gtop
@@ -652,7 +652,7 @@ Commands:
   JobsLeave:
     # Defines how job leave works.
     # If this is true, then the user must have another permission to leave the job. jobs.command.leave.jobName
-    UsePerPermissionLeave: true
+    UsePerPermissionLeave: false
     # Allows to confirm the /jobs leave and leaveall commands, to confirm the leave.
     EnableConfirmation: false
     # Specify the confirm expiry time.

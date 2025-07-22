@@ -74,6 +74,15 @@
 - `/npc action Tutorial10 any_click add message 効率の良すぎるものは作らないでね`
 - `/npc action Tutorial10 any_click add message 参考までに、ネザーゲートを使うトラップや、天空式トラップはあまり動かないかも`
 
+## /npc action Tutorial11 any_click add message ======= <b>ロビーについて</b> =======
+
+- `/npc action Tutorial11 any_click add message ここはロビーといって、いろんな建築物が展示されているんだ`
+- `/npc action Tutorial11 any_click add message ミニゲームやちょっとしたお店、それに隠し要素があるかもしれない`
+- `/npc action Tutorial11 any_click add message それに、<b>遠くから初期スポーンに戻ることもできる</b>よ`
+- `/npc action Tutorial11 any_click add message いつでも<click:suggest_command:'/lobby'>/lobby</click>で戻ってこれるから、いろいろ見て回ってね`
+- `/npc action Tutorial11 any_click add message ただ、金策ワールドだと<b><gold>初期スポーンからの距離に応じて、`
+- `/npc action Tutorial11 any_click add message <b><gold>お金が掛かる</gold></b>から気をつけてね`
+
 ## 職業紹介(農家)
 
 - `/npc action JobsInfoFarmer any_click add message ========== <b>農家</b> ==========`
@@ -124,6 +133,7 @@
 - /npc action Tutorial08 any_click add player_command tutorial complete t08
 - /npc action Tutorial09 any_click add player_command tutorial complete t09
 - /npc action Tutorial10 any_click add player_command tutorial complete t10
+- /npc action Tutorial11 any_click add player_command tutorial complete t11
 
 - /npc action Tutorial01 any_click add play_sound minecraft:entity.experience_orb.pickup
 - /npc action Tutorial02 any_click add play_sound minecraft:entity.experience_orb.pickup
@@ -135,3 +145,4 @@
 - /npc action Tutorial08 any_click add play_sound minecraft:entity.experience_orb.pickup
 - /npc action Tutorial09 any_click add play_sound minecraft:entity.experience_orb.pickup
 - /npc action Tutorial10 any_click add play_sound minecraft:entity.experience_orb.pickup
+- /npc action Tutorial11 any_click add play_sound minecraft:entity.experience_orb.pickup

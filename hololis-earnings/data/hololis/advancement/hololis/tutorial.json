@@ -6,7 +6,8 @@
             "id": "minecraft:book"
         },
         "announce_to_chat": false,
-        "show_toast": true
+        "show_toast": true,
+        "frame": "challenge"
     },
     "criteria": {
         "": {

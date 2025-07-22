@@ -6,7 +6,8 @@
             "id": "minecraft:ender_eye"
         },
         "announce_to_chat": true,
-        "show_toast": true
+        "show_toast": true,
+        "frame": "challenge"
     },
     "criteria": {
         "ender_eye": {
