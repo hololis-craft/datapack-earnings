@@ -91,67 +91,67 @@ Hunter:
       income: 50.0
   Kill:
     Chicken:
-      income: 10.0
+      income: 20.0
     Cow:
-      income: 25.0
+      income: 70.0
     Pig:
-      income: 30.0
+      income: 80.0
     Sheep:
-      income: 30.0
+      income: 80.0
     Wolf:
       income: 15.0
     Creeper:
-      income: 20.0
-    Skeleton:
-      income: 15.0
-    Spider:
-      income: 15.0
-    Zombie:
-      income: 15.0
-    ZOMBIE_VILLAGER:
-      income: 20.0
-    BLAZE:
-      income: 50.0
-    CAVE_SPIDER:
-      income: 30.0
-    ENDERMAN:
-      income: 200.0
-    GHAST:
       income: 100.0
+    Skeleton:
+      income: 150.0
+    Spider:
+      income: 150.0
+    Zombie:
+      income: 150.0
+    ZOMBIE_VILLAGER:
+      income: 100.0
+    BLAZE:
+      income: 300.0
+    CAVE_SPIDER:
+      income: 200.0
+    ENDERMAN:
+      income: 800.0
+    GHAST:
+      income: 300.0
     IRON_GOLEM:
       income: 25.0
     mushroom_cow:
-      income: 5.0
+      income: 50.0
     SILVERFISH:
-      income: 5.0
+      income: 50.0
     SNOWMAN:
-      income: 5.0
+      income: 50.0
     SQUID:
       income: 10.0
     RABBIT:
       income: 15.0
     GUARDIAN:
-      income: 80.0
+      income: 300.0
     SHULKER:
-      income: 140.0
+      income: 740.0
     PHANTOM:
-      income: 80.0
+      income: 150.0
     DROWNED:
-      income: 50.0
+      income: 150.0
     HUSK:
-      income: 25.0
+      income: 150.0
     WITHER:
       income: 1000.0
     WITHER_SKELETON:
       income: 200.0
     WARDEN:
-      income: 500.0
+      income: 800.0
     EVOKER:
-      income: 120.0
+      income: 320.0
     VINDICATOR:
-      income: 120.0
+      income: 320.0
     PILLAGER:
-      income: 120.0
+      income: 320.0
     RAVAGER:
       income: 500.0
     VEX:
