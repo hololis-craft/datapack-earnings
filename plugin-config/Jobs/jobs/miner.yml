@@ -126,25 +126,15 @@ Miner:
     cut_sandstone:
       income: 1
     # 職業 - 土
-    dirt:
-      income: 1
-    grass_block:
-      income: 1
-    gravel:
-      income: 1
     coarse_dirt:
-      income: 1
-    red_sand:
-      income: 1
-    sand:
       income: 1
     clay:
       income: 1
     # 職業 - 鉱石(石炭)
     coal_ore:
-      income: 40
+      income: 20
     deepslate_coal_ore:
-      income: 40
+      income: 20
     # 職業 - 鉱石(RS)
     redstone_ore:
       income: 50
@@ -152,14 +142,14 @@ Miner:
       income: 50
     # 職業 - 鉱石(銅)
     copper_ore:
-      income: 40
+      income: 30
     deepslate_copper_ore:
-      income: 40
+      income: 30
     # 職業 - 鉱石(鉄)
     iron_ore:
-      income: 150
+      income: 100
     deepslate_iron_ore:
-      income: 150
+      income: 100
     # 職業 - 鉱石(金)
     gold_ore:
       income: 100
@@ -172,9 +162,9 @@ Miner:
       income: 20
     # 職業 - 鉱石(ダイヤ)
     diamond_ore:
-      income: 500
+      income: 250
     deepslate_diamond_ore:
-      income: 500
+      income: 200
     # 職業 - 鉱石(エメラルド)
     emerald_ore:
       income: 1000
@@ -183,3 +173,5 @@ Miner:
     # 職業 - 鉱石(ネザークォーツ)
     nether_quartz_ore:
       income: 40
+    amethyst_cluster:
+      income: 10

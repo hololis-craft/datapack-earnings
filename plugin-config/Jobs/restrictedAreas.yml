@@ -23,7 +23,7 @@ restrictedareas:
     point1: 125;0;125
     point2: 150;100;150
     jobs:
-    - digger-0-100
+      - digger-0-100
   area2:
     enabled: false
     multipliers:
@@ -34,4 +34,4 @@ restrictedareas:
     point1: -100;0;-100
     point2: -150;100;-150
     jobs:
-    - all-5-15
+      - all-5-15

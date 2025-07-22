@@ -384,7 +384,7 @@ Economy:
     PayForCombiningItems: true
   VTrade:
     # With this true, player will get money for all trade items instead of each trade action
-    payForEachTradeItem: false
+    payForEachTradeItem: true
   MilkingCow:
     # With this true, when timer is still going, cow milking event will be canceled
     # With this false, player will get bucket of milk, but still no payment
@@ -440,7 +440,7 @@ ExploitProtections:
           Use: true
           # Time in seconds. This can only be positive number and no higher than 900
           # If higher timers are needed then it can be defined in restrictedBlocks.yml file for each specific block
-          Timer: 19
+          Timer: 120
         Break:
           Use: true
           # Time in seconds. This can only be positive number and no higher than 60
@@ -453,7 +453,7 @@ ExploitProtections:
       # This section controls how much damage player should do to monster for player to get paid
       # This prevents from killing monsters in one hit when they suffer in example fall damage
       Use: true
-      Percentage: 15
+      Percentage: 10
       # When enabled we will avoid checking damage done to ender dragon, wither and warden
       # This can help out in case you have server with custom damage sources which might not be registered and payouts might not be given out
       IgnoreBosses: true

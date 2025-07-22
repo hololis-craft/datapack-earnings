@@ -20,11 +20,11 @@ Researcher:
   #     - Brew;redstone;2
   #     - Brew;sugar;2
   #     RewardCommands:
-  #     - eco give [playerName] 100
+  #     - eco give [playerName] 300
   #     - msg [playerName] Completed quest!
   #     RewardDesc:
   #     - Brew some stuff and get money
-  #     - Get 100 for this!
+  #     - Get 300 for this!
   cmd-on-join:
     - lp user [name] parent add jobs-researcher
   cmd-on-leave:
@@ -38,258 +38,260 @@ Researcher:
       income: 50.0
   Brew:
     nether_wart:
-      income: 135
+      income: 300
     redstone:
-      income: 175
+      income: 700
     glowstone_dust:
-      income: 175
+      income: 700
     fermented_spider_eye:
-      income: 175
+      income: 700
     gunpowder:
-      income: 175
+      income: 700
     dragon_breath:
-      income: 175
+      income: 700
     sugar:
-      income: 175
+      income: 700
     rabbit_foot:
-      income: 175
+      income: 700
     glistering_melon_slice:
-      income: 175
+      income: 700
     spider_eye:
-      income: 175
+      income: 700
     pufferfish:
-      income: 175
+      income: 700
     magma_cream:
-      income: 175
+      income: 700
     golden_carrot:
-      income: 175
+      income: 700
     blaze_powder:
-      income: 175
+      income: 700
     ghast_tear:
-      income: 175
+      income: 700
     turtle_helmet:
-      income: 175
+      income: 700
     phantom_membrane:
-      income: 175
+      income: 700
   Enchant:
     wood_sword:
-      income: 135
+      income: 300
     leather_boots:
-      income: 135
+      income: 300
     leather_chestplate:
-      income: 135
+      income: 300
     leather_helmet:
-      income: 135
+      income: 300
     leather_leggings:
-      income: 135
+      income: 300
     iron_sword:
-      income: 135
+      income: 300
     iron_boots:
-      income: 135
+      income: 300
     iron_chestplate:
-      income: 135
+      income: 300
     iron_helmet:
-      income: 135
+      income: 300
     iron_leggings:
-      income: 135
+      income: 300
     gold_sword:
-      income: 135
+      income: 300
     gold_boots:
-      income: 135
+      income: 300
     gold_chestplate:
-      income: 135
+      income: 300
     gold_helmet:
-      income: 135
+      income: 300
     gold_leggings:
-      income: 135
+      income: 300
     diamond_sword:
-      income: 135
+      income: 300
     diamond_pickaxe:
-      income: 135
+      income: 300
     diamond_axe:
-      income: 135
+      income: 300
     diamond_helmet:
-      income: 135
+      income: 300
     diamond_chestplate:
-      income: 135
+      income: 300
     diamond_leggings:
-      income: 135
+      income: 300
     diamond_boots:
-      income: 135
+      income: 300
     Efficiency-1:
-      income: 100
+      income: 300
     Efficiency-2:
-      income: 135
+      income: 300
     Efficiency-3:
-      income: 150
+      income: 500
     Efficiency-4:
-      income: 175
+      income: 700
     Unbreaking-1:
-      income: 100
+      income: 300
     Unbreaking-2:
-      income: 135
+      income: 300
     Unbreaking-3:
-      income: 150
+      income: 500
     SILK_TOUCH:
-      income: 100
+      income: 300
     LOOT_BONUS_BLOCKS-1:
-      income: 100
+      income: 300
     LOOT_BONUS_BLOCKS-2:
-      income: 135
+      income: 300
     LOOT_BONUS_BLOCKS-3:
-      income: 150
+      income: 500
     PROTECTION_ENVIRONMENTAL-1:
-      income: 100
+      income: 300
     PROTECTION_ENVIRONMENTAL-2:
-      income: 135
+      income: 300
     PROTECTION_ENVIRONMENTAL-3:
-      income: 150
+      income: 500
     PROTECTION_ENVIRONMENTAL-4:
-      income: 175
+      income: 700
     DEPTH_STRIDER:
-      income: 100
+      income: 300
     OXYGEN-1:
-      income: 100
+      income: 300
     OXYGEN-2:
-      income: 135
+      income: 300
     OXYGEN-3:
-      income: 150
+      income: 500
     PROTECTION_PROJECTILE-1:
-      income: 100
+      income: 300
     PROTECTION_PROJECTILE-2:
-      income: 135
+      income: 300
     PROTECTION_PROJECTILE-3:
-      income: 150
+      income: 500
     PROTECTION_PROJECTILE-4:
-      income: 175
+      income: 700
     PROTECTION_FIRE-1:
-      income: 100
+      income: 300
     PROTECTION_FIRE-2:
-      income: 135
+      income: 300
     PROTECTION_FIRE-3:
-      income: 150
+      income: 500
     PROTECTION_FIRE-4:
-      income: 175
+      income: 700
     PROTECTION_FALL-1:
-      income: 100
+      income: 300
     PROTECTION_FALL-2:
-      income: 135
+      income: 300
     PROTECTION_FALL-3:
-      income: 150
+      income: 500
     PROTECTION_FALL-4:
-      income: 175
+      income: 700
     THORNS-1:
-      income: 100
+      income: 300
     THORNS-2:
-      income: 135
+      income: 300
     KNOCKBACK-1:
-      income: 100
+      income: 300
     KNOCKBACK-2:
-      income: 135
+      income: 300
     DAMAGE_ALL-1:
-      income: 100
+      income: 300
     DAMAGE_ALL-2:
-      income: 135
+      income: 300
     DAMAGE_ALL-3:
-      income: 150
+      income: 500
     DAMAGE_ALL-4:
-      income: 175
+      income: 700
     DAMAGE_UNDEAD-1:
-      income: 100
+      income: 300
     DAMAGE_UNDEAD-2:
-      income: 135
+      income: 300
     DAMAGE_UNDEAD-3:
-      income: 150
-    DAMAGE_UNDEAD-4:
-      income: 175
-    DAMAGE_ARTHROPODS-1:
-      income: 100
-    DAMAGE_ARTHROPODS-2:
-      income: 135
+      income: 300
     DAMAGE_ARTHROPODS-3:
-      income: 150
+      income: 500
+    DAMAGE_UNDEAD-4:
+      income: 700
+    DAMAGE_ARTHROPODS-1:
+      income: 300
+    DAMAGE_ARTHROPODS-2:
+      income: 300
+    DAMAGE_ARTHROPODS-3:
+      income: 500
     DAMAGE_ARTHROPODS-4:
-      income: 175
+      income: 700
     SWEEPING_EDGE-1:
-      income: 100
+      income: 300
     SWEEPING_EDGE-2:
-      income: 135
+      income: 300
     SWEEPING_EDGE-3:
-      income: 150
+      income: 500
     FIRE_ASPECT-1:
-      income: 100
+      income: 300
     FIRE_ASPECT-2:
-      income: 135
+      income: 300
     LOOT_BONUS_MOBS-1:
-      income: 100
+      income: 300
     LOOT_BONUS_MOBS-2:
-      income: 135
+      income: 300
     LOOT_BONUS_MOBS-3:
-      income: 150
+      income: 500
     ARROW_DAMAGE-1:
-      income: 100
+      income: 300
     ARROW_DAMAGE-2:
-      income: 135
+      income: 300
     ARROW_DAMAGE-3:
-      income: 150
+      income: 500
     ARROW_DAMAGE-4:
-      income: 175
+      income: 700
     ARROW_FIRE:
-      income: 100
+      income: 300
     ARROW_INFINITE:
-      income: 100
+      income: 300
     ARROW_KNOCKBACK-1:
-      income: 100
+      income: 300
     ARROW_KNOCKBACK-2:
-      income: 135
+      income: 300
     LURE-1:
-      income: 100
+      income: 300
     LURE-2:
-      income: 135
+      income: 300
     LURE-3:
-      income: 150
+      income: 500
     LUCK-1:
-      income: 100
+      income: 300
     LUCK-2:
-      income: 135
+      income: 300
     LUCK-3:
-      income: 150
+      income: 500
     LOYALTY-1:
-      income: 100
+      income: 300
     LOYALTY-2:
-      income: 135
+      income: 300
     LOYALTY-3:
-      income: 150
+      income: 500
     CHANNELING:
-      income: 100
+      income: 300
     RIPTIDE-1:
-      income: 100
+      income: 300
     RIPTIDE-2:
-      income: 135
+      income: 300
     RIPTIDE-3:
-      income: 150
+      income: 500
     IMPALING-1:
-      income: 100
+      income: 300
     IMPALING-2:
-      income: 135
+      income: 300
     IMPALING-3:
-      income: 150
+      income: 500
     IMPALING-4:
-      income: 175
+      income: 700
     IMPALING-5:
-      income: 175
+      income: 700
     PIERCING-1:
-      income: 100
+      income: 300
     PIERCING-2:
-      income: 135
+      income: 300
     PIERCING-3:
-      income: 150
+      income: 500
     QUICK_CHARGE-1:
-      income: 100
+      income: 300
     QUICK_CHARGE-2:
-      income: 135
+      income: 300
     MULTISHOT:
-      income: 100
+      income: 300
   Break:
     # 職業 - 石(経験値)
     andesite:
@@ -326,7 +328,7 @@ Researcher:
       income: 50
   Kill:
     Blaze:
-      income: 75
+      income: 1000
     Chicken:
       experience: 2.0
     Cow:
